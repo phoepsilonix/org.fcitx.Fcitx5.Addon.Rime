@@ -120,10 +120,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/fcitx/fcitx5-rime
-        tag: 5.0.12
+        tag: 5.0.13
     post-install:
-      - awk -i inplace '/<\/component>/ { print "  <content_rating type=\"oars-1.1\"/>";
-        } { print $0; }' ${FLATPAK_DEST}/share/metainfo/org.fcitx.Fcitx5.Addon.Rime.metainfo.xml
       - appstream-compose --basename=org.fcitx.Fcitx5.Addon.Rime --prefix=${FLATPAK_DEST}
         --origin=flatpak org.fcitx.Fcitx5.Addon.Rime
 branch: stable
