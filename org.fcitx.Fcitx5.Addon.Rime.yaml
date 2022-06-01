@@ -1,4 +1,5 @@
 app-id: org.fcitx.Fcitx5.Addon.Rime
+branch: stable
 runtime: org.fcitx.Fcitx5
 runtime-version: stable
 sdk: org.kde.Sdk//5.15-21.08
@@ -19,6 +20,13 @@ cleanup:
   - /share/cmake
   - '*.la'
 modules:
+  - modules/boost.yaml
+  - modules/capnproto.yaml
+  - modules/google-glog.yaml
+  - modules/yaml-cpp.yaml
+  - modules/leveldb.yaml
+  - modules/marisa.yaml
+  - modules/opencc.yaml
   - name: librime
     buildsystem: cmake
     builddir: true
@@ -30,14 +38,6 @@ modules:
         branch: 1.7.3
       - type: patch
         path: cmath-include.patch
-    modules:
-      - modules/boost.yaml
-      - modules/capnproto.yaml
-      - modules/google-glog.yaml
-      - modules/yaml-cpp.yaml
-      - modules/leveldb.yaml
-      - modules/marisa.yaml
-      - modules/opencc.yaml
   - name: librime-data
     buildsystem: simple
     build-commands:
@@ -124,4 +124,3 @@ modules:
     post-install:
       - appstream-compose --basename=org.fcitx.Fcitx5.Addon.Rime --prefix=${FLATPAK_DEST}
         --origin=flatpak org.fcitx.Fcitx5.Addon.Rime
-branch: stable
