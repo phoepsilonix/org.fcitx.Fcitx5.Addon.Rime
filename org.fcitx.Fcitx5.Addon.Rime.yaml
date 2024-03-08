@@ -2,7 +2,7 @@ app-id: org.fcitx.Fcitx5.Addon.Rime
 branch: stable
 runtime: org.fcitx.Fcitx5
 runtime-version: stable
-sdk: org.kde.Sdk//5.15-22.08
+sdk: org.kde.Sdk//6.6
 build-extension: true
 appstream-compose: false
 separate-locales: false
@@ -136,7 +136,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/fcitx/fcitx5-rime
-        tag: 5.1.3
+        tag: 5.1.5
     config-opts:
       - -DCMAKE_BUILD_TYPE=Release
     post-install:

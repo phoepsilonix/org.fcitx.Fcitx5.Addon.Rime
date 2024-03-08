@@ -8,11 +8,11 @@ sources:
       - autoreconf -i
 build-commands:
   - make -C bindings swig-python
-  - cd bindings/python && python3 setup.py build_ext --include-dirs=../../include
+  - cd bindings/python && python3 setup.py build_ext
+    --include-dirs=../../include
     --library-dirs=../../lib/marisa/.libs
   - cd bindings/python && python3 setup.py build
 post-install:
-  - cd bindings/python && python3 setup.py install --skip-build --prefix=${FLATPAK_DEST}
-    --root=/ --optimize=1
+  - cd bindings/python && python3 setup.py install --skip-build --prefix=${FLATPAK_DEST} --root=/ --optimize=1
 modules:
   - swig.yaml
