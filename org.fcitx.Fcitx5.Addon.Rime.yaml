@@ -1,8 +1,7 @@
 app-id: org.fcitx.Fcitx5.Addon.Rime
-branch: stable
 runtime: org.fcitx.Fcitx5
 runtime-version: stable
-sdk: org.kde.Sdk//6.9
+sdk: org.kde.Sdk//6.10
 build-extension: true
 separate-locales: false
 build-options:
@@ -10,6 +9,8 @@ build-options:
   prepend-path: /app/addons/Rime/bin
   prepend-pkg-config-path: /app/addons/Rime/lib/pkgconfig
   prepend-ld-library-path: /app/addons/Rime/lib
+  no-debuginfo: true
+  strip: true
 cleanup:
   - /bin
   - /include
@@ -36,12 +37,13 @@ modules:
     sources:
       - type: git
         url: https://github.com/rime/librime
-        tag: 1.12.0
+        tag: 1.15.0
         x-checker-data:
           type: anitya
           project-id: 228902
           stable-only: true
           tag-template: ${version}
+        commit: 75bc43ae9acdd2042d150a8c446e9ac8b6d77c84
       - type: git
         url: https://github.com/lotem/librime-octagram.git
         commit: dfcc15115788c828d9dd7b4bff68067d3ce2ffb8
@@ -144,6 +146,6 @@ modules:
     sources:
       - type: git
         url: https://github.com/fcitx/fcitx5-rime
-        tag: 5.1.11
+        tag: 5.1.12
     config-opts:
       - -DCMAKE_BUILD_TYPE=Release

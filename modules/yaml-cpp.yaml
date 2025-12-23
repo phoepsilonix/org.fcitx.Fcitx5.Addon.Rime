@@ -4,6 +4,7 @@ config-opts:
   - -DCMAKE_BUILD_TYPE=Release
   - -DBUILD_SHARED_LIBS=ON
   - -DYAML_BUILD_SHARED_LIBS=ON
+  - -DCMAKE_POLICY_VERSION_MINIMUM=3.5
 sources:
   - type: archive
     url: https://github.com/jbeder/yaml-cpp/archive/0.8.0.tar.gz
@@ -13,3 +14,5 @@ sources:
       project-id: 5284
       stable-only: true
       url-template: https://github.com/jbeder/yaml-cpp/archive/${version}.tar.gz
+  - type: patch
+    path: 7b469b4220f96fb3d036cf68cd7bd30bd39e61d2.patch
