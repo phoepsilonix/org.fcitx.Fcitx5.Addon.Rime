@@ -37,13 +37,13 @@ modules:
     sources:
       - type: git
         url: https://github.com/rime/librime
-        tag: 1.15.0
+        tag: 1.16.1
         x-checker-data:
           type: anitya
           project-id: 228902
           stable-only: true
           tag-template: ${version}
-        commit: 75bc43ae9acdd2042d150a8c446e9ac8b6d77c84
+        commit: de4700e9f6b75b109910613df907965e3cbe0567
       - type: git
         url: https://github.com/lotem/librime-octagram.git
         commit: dfcc15115788c828d9dd7b4bff68067d3ce2ffb8
@@ -146,6 +146,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/fcitx/fcitx5-rime
-        tag: 5.1.12
+        tag: 5.1.13
+        commit: 960446767ab51106d775f08e9d7b34dc605c60ba
     config-opts:
       - -DCMAKE_BUILD_TYPE=Release
