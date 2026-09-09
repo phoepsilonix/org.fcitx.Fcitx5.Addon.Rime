@@ -262,7 +262,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/fcitx/fcitx5-rime
-        tag: 5.1.15
-        commit: 16e95d94d5d1b390fc55ee14429b5ffa3a0902db
+        tag: 5.1.16
+        commit: 62990605fe4380060719f33ca3b13f077feb0565
     config-opts:
       - -DCMAKE_BUILD_TYPE=Release
